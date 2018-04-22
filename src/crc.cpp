@@ -1,6 +1,6 @@
 /**
  * Client program for SCADA communication protocol DLMS
- * Author: Jan Pristas, Brno University Of Technolofy, Faculty Of Information Technologies
+ * Author: Jan Pristas, Brno University Of Technology, Faculty Of Information Technologies
  **/
 
 #include "crc.h"

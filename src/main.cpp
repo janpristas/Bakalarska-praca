@@ -1,5 +1,5 @@
 /**
- *
+ * Author: Jan Pristas, Brno University Of Technology, Faculty Of Information Technologies
  **/
 
 #include "client.h"
@@ -20,17 +20,17 @@ int main(int argc, char *argv[]) {
 		std::ifstream inputFile;
 		inputFile.open(optionArgs.input, std::ios::binary);
 		if (inputFile) {
-			readInputFile(inputFile, message);
+			readInputFile(inputFile, message, options);
 			inputFile.close();
 		} else {
 			errorMsg(EFILE);
 		}
 	} else {
-		readInputFile(std::cin, message);
+		readInputFile(std::cin, message, options);
 	}
 
 	if (options.tcp == 1) {
-		tcpMessage(message, answer, optionArgs);
+		tcpMessage(message, answer, options, optionArgs);
 	} else {
 		udpMessage(message, answer, optionArgs);
 	}

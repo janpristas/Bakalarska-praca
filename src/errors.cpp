@@ -1,5 +1,5 @@
 /**
- *
+ * Author: Jan Pristas, Brno University Of Technology, Faculty Of Information Technologies
  **/
 
 #include "errors.h"
@@ -24,6 +24,9 @@ void errorMsg(int e_code) {
 		case EPORT:
 			std::cerr << "Port value has to be number in range 0..65535." << std::endl;
 			exit(EPORT);
+		case EPROT:
+			std::cerr << "One of protocols IEC104 and DLMS has to be set. But don't both at the same time." << std::endl;
+			exit(EPROT);
 		case EHLP:
 			std::cerr << "Help message request has to be set individual, without any other parameter." << std::endl;
 			exit(EHLP);

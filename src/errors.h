@@ -1,5 +1,5 @@
 /**
- *
+ * Author: Jan Pristas, Brno University Of Technology, Faculty Of Information Technologies
  **/
 
 #include <iostream>
@@ -12,6 +12,7 @@ enum eCodes {
 	EPORT,
 	EHLP,
 	ETU,
+	EPROT,
 	EUT,
 	EFILE,
 	ESOCK,

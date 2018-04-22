@@ -1,5 +1,5 @@
 /**
- *
+ * Author: Jan Pristas, Brno University Of Technology, Faculty Of Information Technologies
  **/
 
 #include <iostream>
@@ -9,6 +9,7 @@
 #include <vector>
 
 #include <unistd.h>
+#include <fcntl.h>
 #include <arpa/inet.h>
 #include <sys/time.h>
 #include <sys/types.h> 
@@ -22,11 +23,11 @@
 #include "crc.h"
 
 /* Constants */
-const int buffsize = 2048;
+const int buffsize = 8192;
 
-void readInputFile(std::istream& in, std::vector<std::string> &message);
+void readInputFile(std::istream& in, std::vector<std::string> &message, struct Options options);
 void writeOutputToFile(std::ostream& out, std::vector<std::string> answer);
-int tcpMessage(std::vector<std::string> message, std::vector<std::string> &answer, struct OptionArgs optionArgs);
+int tcpMessage(std::vector<std::string> message, std::vector<std::string> &answer, struct Options options, struct OptionArgs optionArgs);
 int udpMessage(std::vector<std::string> message, std::vector<std::string> &answer, struct OptionArgs optionArgs);
 
 

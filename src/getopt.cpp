@@ -1,5 +1,5 @@
 /**
- *
+ * Author: Jan Pristas, Brno University Of Technology, Faculty Of Information Technologies
  **/
 
 #include "getopt.h"
@@ -9,7 +9,7 @@ void params(int argc, char *argv[], struct Options &options, struct OptionArgs &
 	int index = 0;
 	opterr = 0; // Turn off getopt error messages
 
-	while ((c = getopt_long(argc, argv, "ha:tup:i:o:", long_options, &index)) != EOF) {
+	while ((c = getopt_long(argc, argv, "ha:tup:i:o:12", long_options, &index)) != EOF) {
 		switch(c) {
 			case 'h':
 				options.help = 1;
@@ -27,7 +27,7 @@ void params(int argc, char *argv[], struct Options &options, struct OptionArgs &
 			case 'p':
 				if (isdigit(*optarg)) {
 					options.port = 1;
-					optionArgs.port = atoi(optarg);
+					optionArgs.port = std::stoi(optarg);
 					if ((optionArgs.port < 0) || (optionArgs.port > 65535)) {
 						errorMsg(EPORT);
 					} else {
@@ -43,6 +43,12 @@ void params(int argc, char *argv[], struct Options &options, struct OptionArgs &
 			case 'o':
 				options.output = 1;
 				optionArgs.output = optarg;
+				break;
+			case '1':
+				options.iec = 1;
+				break;
+			case '2':
+				options.dlms = 1;
 				break;
 			case '?':
 				errorMsg(EARG);
@@ -63,5 +69,19 @@ void params(int argc, char *argv[], struct Options &options, struct OptionArgs &
 		errorMsg(ETU);
 	} else if ((options.tcp == 0) && (options.udp == 0)) {
 		errorMsg(EUT);
+	}
+
+	if ((options.iec == 1) && (options.dlms == 1)) {
+		errorMsg(EPROT);
+	} else if ((options.iec == 0) && (options.dlms == 0)) {
+		errorMsg(EPROT);
+	}
+
+	if (options.port == 0) {
+		if (options.iec == 1) {
+			optionArgs.port = def_iec_port;
+		} else {
+			optionArgs.port = def_dlms_port;
+		}
 	}
 }
