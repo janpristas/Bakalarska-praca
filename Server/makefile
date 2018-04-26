@@ -4,7 +4,11 @@ TARGET   = gurux.dlms.server.bin
 CC       = g++
 
 # compiling flags here
+<<<<<<< HEAD
+CFLAGS   = -c -std=c++11
+=======
 CFLAGS   = -c
+>>>>>>> 8a81167e51af2be8751bad437bb068262d8ed2cf
 
 LINKER   = g++ -o
 
@@ -40,4 +44,8 @@ clean:
 .PHONEY: remove
 remove: clean
 	@$(rm) $(BINDIR)/$(TARGET)
+<<<<<<< HEAD
 	@echo "Executable removed!"
+=======
+	@echo "Executable removed!"
+>>>>>>> 8a81167e51af2be8751bad437bb068262d8ed2cf

@@ -626,12 +626,21 @@ int CGXDLMSBase::Init(int port, GX_TRACE_LEVEL trace)
     GetIpAddress(address, subnet);
 
     srand((unsigned long)time(NULL));
+<<<<<<< HEAD
+    CGXDLMSData* ldn = AddLogicalDeviceName(GetItems(), (unsigned long) rand() % 900 + 100);
+    //Add firmaware.
+    AddFirmwareVersion(GetItems());
+    AddElectricityID1(GetItems(), rand() % 900 + 100);
+    AddElectricityID2(GetItems(), rand() % 900 + 100);
+    AddElectricityID3(GetItems(), rand() % 900 + 100);
+=======
     CGXDLMSData* ldn = AddLogicalDeviceName(GetItems(), (unsigned long) rand() % 90000 + 10000);
     //Add firmaware.
     AddFirmwareVersion(GetItems());
     AddElectricityID1(GetItems(), rand() % 90000 + 10000);
     AddElectricityID2(GetItems(), rand() % 90000 + 10000);
     AddElectricityID3(GetItems(), rand() % 90000 + 10000);
+>>>>>>> 8a81167e51af2be8751bad437bb068262d8ed2cf
 
     //Add Last avarage.
     CGXDLMSRegister* pRegister = new CGXDLMSRegister("1.1.21.25.0.255");
