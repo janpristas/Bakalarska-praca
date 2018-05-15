@@ -1,0 +1,55 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{SCADA}
+Clarke, G.; Reynders, D.: \emph{{\it Practical Modern SCADA Protocols}}.
+  ELSEVIER SCIENCE TECHNOLOGY, United Kingdom, 2004.
+
+\bibitem{IoTFundamentals}
+Hanes, D.; Salqueiro, G.; Grossetete, P.; aj.: \emph{{\it IoT Fundamentals.
+  Networking Technologies, Protocol and Use Cases for the Internet of Things}}.
+  Cisco Press, 2017.
+
+\bibitem{Horych}
+Horych, V.: \emph{{\it Analýza řídicích protokolů využívaných v
+  průmyslových aplikacích}}. Vysoké učení technické v Brně, Fakulta
+  elektrotechniky a komunikačních technologií, 2009, diplomová práca.
+
+\bibitem{Security}
+Knapp, E.~D.; Langill, J.~T.: \emph{Industrial Network Security: Securing
+  Critical Infrastructure Networks for Smart Grid, SCADA, and Other Industrial
+  Control Systems}. Syngress, 2011.
+
+\bibitem{IoTSec}
+Matoušek, P.: \emph{{\it Security Issues in Industrial IoT Systems}}. Vysoké
+  učení technické v Brně, projekt IRONSTONE, technická správa č.
+  FIT-TR-2018-xx.
+
+\bibitem{dlmscosem}
+Matoušek, P.: \emph{{\it Analysis of DLMS Protocol}}. Vysoké učení
+  technické v Brně, 2017, projekt IRONSTONE, technická správa č.
+  FIT-TR-2017-13.
+
+\bibitem{iec}
+Matoušek, P.: \emph{{\it Description of IEC 60870-104 Protocol}}. Vysoké
+  učení technické v Brně, 2017, projekt IRONSTONE, technická správa č.
+  FIT-TR-2017-12.
+
+\bibitem{Pekarek}
+Pekárek, D.: \emph{{\it Popis a testování komunikačních protokolů normy
+  IEC 60870-5-103 a 60870-5-104}}. Vysoké učení technické v Brně, Fakulta
+  elektrotechniky a komunikačních technologií, 2017, diplomová práca.
+
+\bibitem{nist}
+Stouffer, K.; Falco, J.; Scarfone, K.: Guide to Industrial Control Systems
+  (ICS) Security. 2011.
+\newline\urlprefix\url{https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82.pdf}
+
+\end{thebibliography}

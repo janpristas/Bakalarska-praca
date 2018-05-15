@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: projekt.aux
+The style file: bib-styles/czechiso.bst
+Database file #1: projekt-20-literatura-bibliography.bib
+Warning--entry type for "nist" isn't style-file defined
+--line 54 of file projekt-20-literatura-bibliography.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty year in IoTSec
+You've used 9 entries,
+            3151 wiz_defined-function locations,
+            694 strings with 6787 characters,
+and the built_in function-call counts, 3531 in all, are:
+= -- 204
+> -- 112
+< -- 0
++ -- 55
+- -- 32
+* -- 169
+:= -- 406
+add.period$ -- 18
+call.type$ -- 9
+change.case$ -- 38
+chr.to.int$ -- 0
+cite$ -- 10
+duplicate$ -- 370
+empty$ -- 387
+format.name$ -- 36
+if$ -- 760
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 106
+newline$ -- 38
+num.names$ -- 18
+pop$ -- 246
+preamble$ -- 1
+purify$ -- 33
+quote$ -- 0
+skip$ -- 132
+stack$ -- 0
+substring$ -- 55
+swap$ -- 153
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 1
+while$ -- 18
+width$ -- 10
+write$ -- 85
+(There were 2 warnings)

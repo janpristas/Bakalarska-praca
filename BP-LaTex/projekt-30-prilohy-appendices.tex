@@ -1,0 +1,104 @@
+\chapter{Inštalácia monitorovacích nástrojov}
+\label{Ako}
+
+\tab V tejto kapitole je uvedený popis práce s jednotlivými monitorovacími nástrojmi popísanými v kapitole \ref{porovnanie} Jedná sa o popis, kde jednotlivé nástroje nájsť na internete, postup inštalácie a konfiguráciu koncových zariadení na simuláciu.
+
+\section{DMLS Director}
+\label{Ako_DLMS}
+\tab Kedže je program DLMS Director typu open source, je možné ho zdarma stiahnuť priamo zo stránky výrobcu\footnote{DLMS Director \url{http://www.gurux.fi/Download} [Online: Október 2017]}. Na stránke je rovnako odkaz na GitHub repozitár v ktorom je možné nájsť zdrojové kódy programu. Po stiahnutí inštalačného súboru, ho stačí spustiť a program sa automaticky nainštaluje. K programu je od výrobcu poskytovaný online manuál \footnote{DLMS Director manuál \url{https://www.gurux.fi/GXDLMSDirectorHelp} [Online: Október 2017]}, ktorý veľmi prehľadne popisuje prácu s programom. Práca s nástrojom je ale aj bez návodu veľmi jednoduchá. Pri pridávaní nového zariadenia postupujeme v niekoľkých krokoch:
+\begin{enumerate}
+\item Spustiť DLMS Director
+\item V DLMS Directore nakonfigurovať server s ktorým sa ide program spojiť:
+\begin{enumerate}
+\item {\tt File} $\rightarrow$ {\tt Add Device}
+\item Zvoliť meno pre server
+\item Zvoliť výrobcu $\rightarrow$ {\tt Gurux}, 
+\item Zvoliť typ autentizácie a heslo (ak server využíva autentizáciu)
+\item Nastaviť IP adresu servera a port
+\end{enumerate}
+\item Po úspešnom nakonfigurovaní vytvoriť spojenie so serverom. Spojenie inicializuje program DLMS Director. V ľavom paneli je potrebné rozkliknúť zoznam {\tt Devices} a kliknúť pravým tlačítkom na server, následne na {\tt Connect}.
+\item Po vytvorení spojenia sa zobrazí zoznam pripojených zariadení, z ktorých je možné čítať a zapisovať hodnoty, príkazy {\tt Read} a {\tt Write}.
+\end{enumerate} \par
+Na stránke programu je podrobný postup ako nakonfigurovať jednotlivé zariadenia, ktoré k programu pripájame\footnote{DLMS Director konfigurácia \url{http://www.gurux.fi/GXDLMSDirectorExample} [Online: Október 2017]}.
+
+\section{XmlDemo}
+\label{Ako_XML}
+\tab XmlDemo je zdarma poskytovaný nástroj spoločnosti iCube. Je možné ho opäť stiahnuť na stránke výrobcu\footnote{XmlDemo \url{https://icube.ch/xmldemo/xmldemo.html} [Online: Október 2017]}. Jednotlivé vývojové balíky v ktorých je program napísaný však nie sú voľne k dispozíci. Je ale možné napísať priamo spoločnosti so žiadosťou o ne. Odkaz na inštalačný súbor je na konci vyššie odkazovanej stránky, predtým je celkom podrobný návod ako s programom pracovať, ako pripájať jednotlivé zariadenia, čítať z nich hodnoty a pod. 
+Inštalácia prebieha v niekoľkých krokoch:
+\begin{enumerate}
+\item Spustiť stiahnutý súbor a vyskočí nám sprievodca inštaláciou
+\item {\tt Next} $\rightarrow$ Vybrať zložku, kam sa program nainštaluje $\rightarrow$ {\tt Next} $\rightarrow$ {\tt Install}
+\item Program sa nainštaluje a môžme ho spustiť
+\end{enumerate} \par
+Pri pridávaní nového zariadenia postupujeme nasledovane:
+\begin{enumerate}
+\item Spustiť XmlDemo
+\begin{enumerate}
+\item {\tt Show} $\rightarrow$ {\tt Settings}
+\item {\tt Select profile (TCP/HDLC)}
+\item Nastaviť IP adresu servera a port
+\item Nastaviť referenčný model a prípadne heslo
+\item Nastaviť timeout, obe hodnoty {\tt Connect} a {\tt Response} na prijateľné hodnoty v milisekundách
+\item Nastaviť adresy pre klienta aj server
+\end{enumerate}
+\item Po nakonfigurovaní je možné vytvoriť spojenie. {\tt Do} $\rightarrow$ {\tt Connect} a {\tt Do} $\rightarrow$ {\tt Read object-list}.
+\end{enumerate} \par
+
+\section{WinPP104}
+\label{Ako_Win}
+\tab WinPP104 sa dá stiahnuť na stránke spoločnosti, ktorá program vytvorila\footnote{WinPP104 \url{http://www.ppfink.de//} [Online: Október 2017]}. 
+Inštalácia prebieha v niekoľkých krokoch:
+\begin{enumerate}
+\item Spustiť stiahnutý súbor a vyskočí nám sprievodca inštaláciou
+\item Vybrať jazyk inštalácie (angličtina/nemčina) $\rightarrow$ {\tt OK} $\rightarrow$ {\tt Next}
+\item Vybrať zložku, kam sa program nainštaluje $\rightarrow$ {\tt Next}
+\item Vybrať názov zložky, ktorý sa vytvorí v Štart menu $\rightarrow$ {\tt Next}
+\item Zvoliť, či chceme zástupcu na ploche $\rightarrow$ {\tt Next} $\rightarrow$ {\tt Install}
+\end{enumerate} \par
+Po inštalácií je možné program spustiť. Výrobca k programu tiež poskytuje podrobný manuál ako s programom pracovať\footnote{WinPP104 - manuál \url{http://www.ppfink.de//downloads/Bed104Usa.pdf} [Online: Október 2017]}.
+
+\section{Knižnica OpenMUC - j60870}
+\label{Ako_Open}
+\tab Knižnica j60870 je na stiahnutie priamo na stránke výrobcu\footnote{j60870 \url{https://www.openmuc.org/iec-60870-5-104/download/} [Online: Október 2017]}. Priamo v stiahnutej zložke sú už dva preložené binárne súbory, v zložke {\tt run-scripts}. Konkrétne sa jedná o jednoduchú aplikáciu klienta a servera. Na aplikáciach je pekne vidieť čo sa dá pomocou knižnice naimplementovať. Ja osobne som ich spúšťal cez terminál. Na spustenie je ale nutné mať nainštalované Java JDK. Čo sa týka samotnej knižnice, stačí ju vložiť do projektu v jazyku Java a ľubovolne s ňou pracovať. Súčasťou je aj rozsiahla dokumentácia popisujúca jednotlivé funkcie, ktoré knižnica ponúka\footnote{Javadoc \url{https://www.openmuc.org/iec-60870-5-104/javadoc/} [Online: Október 2017]}.
+
+\section{QTester 104}
+\label{Ako_QT}
+\tab Výrobca programu QTester 104 nemá vlastnú stránku produktu. Pre stiahnutie programu je potrebné navštíviť stránku {\tt sourceforge.net}\footnote{QTester 104 \url{https://sourceforge.net/projects/qtester104/} [Online: Október 2017]}. Na stránke nájdete zložku súboru obsahujúcu zdrojové kódy programu (v zložke {\tt src}) a samotný spustitelný súbor (v zložke {\tt bin}). Program nie je nutné inštalovať, stačí ho iba spustiť. Po spustení je možné pripojiť ľubovolné meracie zariadenia komunikujúce cez protokol IEC 60870-5-104. Bohužiaľ výrobca neposkytuje nijaký návod na prácu s programom. Samotné GUI je ale veľmi intuitívne a návod nie je ani potrebný. Pri pripájaní nového servera sa postupuje v niekoľkých krokoch:
+\begin{enumerate}
+\item Spustiť program QTester 104: {\tt qtester104} $\rightarrow$ {\tt bin} $\rightarrow$ {\tt QTester104}
+\item Zadať ip adresu servera
+\item Po úspešnom spojení, kliknúť na {\tt GI (General Interrogation)} aby sa načítali objekty pripojené k serveru
+\item Zakliknúť {\tt Log Messages}, prípadne {\tt AutoScroll} na zobrazenie logovacej správy
+\end{enumerate}
+
+\section{IEC 60870-5-104 Client/Server Simulator}
+\label{Ako_IEC}
+\tab Programy IEC 60870-5-104 Client a Server Simulator síce majú vlastnú internetovú stránku, ale inštalačné súbory na demoverzie na nej nenájdeme. Aspoň nie priamo. Kvôli inštalačným súborom je nutné vyplniť určité osobné informácie. Spätne nám potom spoločnosť pošle na emailovú adresu, ktorú sme zadali, odkaz na stiahnutie daného programu. Súbory sa dajú stiahnuť aj nepriamo na stránke {\tt sourceforge.net}\footnote{IEC 60870-5-104 Client/Server Simulator \url{https://sourceforge.net/u/freyrscada/profile/} [Online: November 2017]}. Inštalácia oboch programov prebieha rovnako:
+\begin{enumerate}
+\item Spustiť stiahnutý súbor a vyskočí nám sprievodca inštaláciou
+\item {\tt Next} Zobrazia sa licenčné podmienky k danému programu. Po prečítaní klikneme na {\tt I Agree}. Prípadne, ak s podmienkami nesúhlasíme, môžeme inštaláciu zrušiť tlačidlom {\tt Cancel}
+\item Po odsúhlasení vyberieme kam sa program nainštaluje $\rightarrow$ {\tt Next}
+\item Vybrať názov zložky, ktorý sa vytvorí v Štart menu $\rightarrow$ {\tt Next}
+\item Zvoliť, či chceme zástupcu na ploche $\rightarrow$ {\tt Next} $\rightarrow$ {\tt Install}
+\end{enumerate} \par
+
+Po úspešnom nainštalovaní môžeme program spustiť a pracovať s ním. Pridávanie nových uzlov (klient, server) prebieha v oboch programoch obdobne:
+\begin{enumerate}
+\item Spustiť programu klienta/servera
+\item Kliknutie na {\tt Add Client/Server}
+\item Nastaviť ip adresu a port
+\item Pre server je potrebné nastaviť pripojené objekty
+\begin{enumerate}
+\item {\tt Configuration} $\rightarrow$ {\tt Add Row} $\rightarrow$ pridať požadované objekty
+\item {\tt Load Configuration}
+\end{enumerate}
+\item {\tt Data\_Objects} $\rightarrow$ {\tt Start Communication}
+\item Klient sa pripojí k serveru a zobrazí pripojené objekty
+\end{enumerate} \par
+Uzly sa dajú nastaviť celkom komplexne, vyžaduje to však väčšiu znalosť problematiky. Spoločnosť ale poskytuje veľmi dobre spracované inštruktážne videá na vytvorenie koncových staníc a prácu s nimi. Videá sú štyri a je možné ich nájsť na stránke spoločnosti\footnote{Tutoriály \url{http://freyrscada.com/iec-60870-5-104-Client-Simulator.php} [Online: November 2017]}. So samotnými programami je možné pracovať maximálne 15 minút, nakoľko ide o demoverzie. Po opätovnom spustení je potrebné opäť nastaviť všetky predošlé konfigurácie.
+
+\chapter{Inštalácia C++ knižnice pre protokol DLMS}
+\label{kniznica}
+Open source C++ knižnicu pre protokol DLMS poskytovanú spoločnosťou GuruX je možné nájsť na stránke Github\footnote{DLMS knižnica - Github \url{https://github.com/Gurux/Gurux.DLMS.cpp} [Online: Marec 2018]}. Koreňová zložka obsahuje časť {\tt development} obsahujúcu všetky komponenty samotnej knižnice. Ďalej sú tam vzorové programy pre klienta a server. Oba v samostatnej zložke. Pre nainštalovanie knižnice je potrebné ísť do zložky {\tt development} a vytvoriť zložky {\tt lib} a {\tt obj}. Potom spustiť priložený {\tt Makefile}. Prekladač ale zahlási niekoľko chýb. Všetky sa týkajú súborov {\tt GXDLMSAssociationLogicalName.h/.cpp}. Súbory obsahujú znaky {\tt >>} a prekladač si pravdepodobne myslí, že má ísť o bitovú operáciu na mieste, kde by byť nemala. Je tam preto potrebné pridať medzeru a prepísať to na {\tt > >}. Teraz keď spustíme {\tt make}, preklad by mal prejsť bez problémov. Pre inštaláciu vzorového klienta a servera je tiež vytvorený {\tt Makefile}. Samostatný pre každý program, vždy v jeho zložke. Pred spustením je opäť potrebné vytvoriť dve nové zložky, tentokrát {\tt bin} a {\tt obj}. Po vytvorení môžeme zadať príkaz {\tt make}.
+
+
